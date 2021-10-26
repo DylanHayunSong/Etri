@@ -55,39 +55,39 @@ public class Memory : MonoBehaviour
             
         }
 
-        //if (Input.GetKeyDown(KeyCode.A))
-        //{
-        //    var heartState = MemoryMappedFile.OpenExisting("SM_HR_DATA");
-        //    var respirState = MemoryMappedFile.OpenExisting("SM_RR_DATA");
-        //    var faceState = MemoryMappedFile.OpenExisting("SM_FACESTATE_DATA");
-        //    //var faceTime = MemoryMappedFile.OpenExisting("SM_FACESTATE_TIME");
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            var heartState = MemoryMappedFile.OpenExisting("SM_HR_DATA");
+            var respirState = MemoryMappedFile.OpenExisting("SM_RR_DATA");
+            var faceState = MemoryMappedFile.OpenExisting("SM_FACESTATE_DATA");
+            //var faceTime = MemoryMappedFile.OpenExisting("SM_FACESTATE_TIME");
 
-        //    var accessorHeart = heartState.CreateViewAccessor();
-        //    double hr = accessorHeart.ReadDouble(0);
-        //    hrText.text = "Heart Rate: " + hr.ToString();
+            var accessorHeart = heartState.CreateViewAccessor();
+            double hr = accessorHeart.ReadDouble(0);
+            hrText.text = "Heart Rate: " + hr.ToString();
 
-        //    var accessorRespir = respirState.CreateViewAccessor();
-        //    double rr = accessorRespir.ReadDouble(0);
-        //    rrText.text = "Respiratory Rate: " + rr.ToString();
+            var accessorRespir = respirState.CreateViewAccessor();
+            double rr = accessorRespir.ReadDouble(0);
+            rrText.text = "Respiratory Rate: " + rr.ToString();
 
-        //    var accessorFace = faceState.CreateViewAccessor();
-        //    accessorFace.ReadArray(0, FaceData, 0, FaceData.Length);
-        //    string faceTxt = System.Text.Encoding.UTF8.GetString(FaceData);
-        //    faceText.text = "Face State: " + faceTxt;
-        //    if (faceState != null)
-        //    {
+            var accessorFace = faceState.CreateViewAccessor();
+            accessorFace.ReadArray(0, FaceData, 0, FaceData.Length);
+            string faceTxt = System.Text.Encoding.UTF8.GetString(FaceData);
+            faceText.text = "Face State: " + faceTxt;
+            if (faceState != null)
+            {
 
-        //        //var bytes = new Byte[accessorFace.Capacity];
-        //        //accessorFace.ReadArray<byte>(0, bytes, 0, bytes.Length);
-        //        //accessorState.ReadArray(0, FaceData, 0, FaceData.Length);
+                //var bytes = new Byte[accessorFace.Capacity];
+                //accessorFace.ReadArray<byte>(0, bytes, 0, bytes.Length);
+                //accessorState.ReadArray(0, FaceData, 0, FaceData.Length);
 
-        //        //Texture2D texure = new Texture2D(640, 480, TextureFormat.RGB24, false);
-        //        //texure.LoadRawTextureData(FaceData);
-        //        //texure.Apply();
-        //        //Rect rect = new Rect(0, 0, 640, 480);
-        //        //faceimage.sprite = Sprite.Create(texure, rect, new Vector2(0, 0));
-        //    }
-        //}
+                //Texture2D texure = new Texture2D(640, 480, TextureFormat.RGB24, false);
+                //texure.LoadRawTextureData(FaceData);
+                //texure.Apply();
+                //Rect rect = new Rect(0, 0, 640, 480);
+                //faceimage.sprite = Sprite.Create(texure, rect, new Vector2(0, 0));
+            }
+        }
 
         if (Input.GetKeyUp(KeyCode.Space) && keydown == true)
         {
